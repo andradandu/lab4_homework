@@ -1,0 +1,29 @@
+N = { program assignment input_declaration type prompt loop expression block block1 block2 comparison if_statement print_statement relation digit }
+
+
+E= { + - * // ^ %  ==  <  <=  =   !=  >=   > =: ; : . () int input for in range if  break print identifier}
+
+
+S= program
+
+
+P= {
+program -> assignment | assignment loop
+assignment -> identifier = input_declaration
+input_declaration -> type ( input ( prompt ))
+type-> int
+prompt -> Enter a:  | Enter b: 
+loop -> for identifier in range( expression ): block
+expression -> identifier, identifier + digit | identifier , identifier// digit + digit
+block -> block1 | block2
+block1 -> assignment loop if_statement
+block2 -> if_statement
+comparison -> identifier % identifier relation digit
+if_statement -> if comparison : assignment break | if identifier relation digit : print_statement
+print_statement -> "print(" variable ")"
+relation ->  < |   <=   |   =   |  !=   |  >=  |    >   |  ==
+digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+}
+
+
+Obs: I made this context-free grammar with the data from lab 1.
